@@ -1,0 +1,786 @@
+[
+    {
+        "id": "c7f7a03a584cb59c",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6098d39cea387008",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.100.2",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6f5aeda6e0f2951e",
+        "type": "ui_tab",
+        "name": "Inkubator",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "daab2ce6dee9a7d5",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "1a851134612c314d",
+        "type": "ui_group",
+        "name": "Trenutno stanje",
+        "tab": "6f5aeda6e0f2951e",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "cfc66f4e92b1fc34",
+        "type": "ui_group",
+        "name": "Historija",
+        "tab": "6f5aeda6e0f2951e",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a76ca902eac64da4",
+        "type": "ui_chart",
+        "z": "c7f7a03a584cb59c",
+        "name": "",
+        "group": "cfc66f4e92b1fc34",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Temperatura",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 970,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e3b0d3adc3852bcf",
+        "type": "ui_gauge",
+        "z": "c7f7a03a584cb59c",
+        "name": "",
+        "group": "1a851134612c314d",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Vlaznost zraka",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#a51d2d",
+            "#2ec27e",
+            "#ca3838"
+        ],
+        "seg1": "45",
+        "seg2": "60",
+        "diff": false,
+        "className": "",
+        "x": 940,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "7c9ed7509b973491",
+        "type": "ui_gauge",
+        "z": "c7f7a03a584cb59c",
+        "name": "",
+        "group": "1a851134612c314d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#a51d2d",
+            "#2ec27e",
+            "#ca3838"
+        ],
+        "seg1": "37",
+        "seg2": "38",
+        "diff": false,
+        "className": "",
+        "x": 970,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "2a5f41e8fc61bd38",
+        "type": "ui_chart",
+        "z": "c7f7a03a584cb59c",
+        "name": "",
+        "group": "cfc66f4e92b1fc34",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Vlaznost zraka",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 940,
+        "y": 340,
+        "wires": [
+            [
+                "f8d5b52b003fc9a7"
+            ]
+        ]
+    },
+    {
+        "id": "20252f966dee43ca",
+        "type": "mqtt in",
+        "z": "c7f7a03a584cb59c",
+        "name": "Inkubator",
+        "topic": "inkubator/stanje",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "6098d39cea387008",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 300,
+        "y": 340,
+        "wires": [
+            [
+                "775fd4c322d1f239",
+                "ac56c97b73a8a730"
+            ]
+        ]
+    },
+    {
+        "id": "775fd4c322d1f239",
+        "type": "json",
+        "z": "c7f7a03a584cb59c",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 530,
+        "y": 340,
+        "wires": [
+            [
+                "e72c48894a5599f1",
+                "202072296fbaae42",
+                "a61e8f559409a0ca"
+            ]
+        ]
+    },
+    {
+        "id": "ac56c97b73a8a730",
+        "type": "debug",
+        "z": "c7f7a03a584cb59c",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "7cb51d366f8cd252",
+        "type": "debug",
+        "z": "c7f7a03a584cb59c",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "e72c48894a5599f1",
+        "type": "function",
+        "z": "c7f7a03a584cb59c",
+        "name": "temperatura",
+        "func": "msg.payload = parseFloat(msg.payload.temperatura).toFixed(2);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 180,
+        "wires": [
+            [
+                "7cb51d366f8cd252",
+                "7c9ed7509b973491",
+                "a76ca902eac64da4"
+            ]
+        ]
+    },
+    {
+        "id": "202072296fbaae42",
+        "type": "function",
+        "z": "c7f7a03a584cb59c",
+        "name": "vlaznost",
+        "func": "msg.payload = msg.payload.vlaznost\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 340,
+        "wires": [
+            [
+                "6935f6f0e5bfded0",
+                "e3b0d3adc3852bcf",
+                "2a5f41e8fc61bd38"
+            ]
+        ]
+    },
+    {
+        "id": "a61e8f559409a0ca",
+        "type": "function",
+        "z": "c7f7a03a584cb59c",
+        "name": "grijac",
+        "func": "msg.payload = msg.payload.grijac == \"ON\" ? 1 : 0;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 580,
+        "wires": [
+            [
+                "dd0785676f178edc",
+                "f5860f9e8e382cd1",
+                "906ab67e55964c86"
+            ]
+        ]
+    },
+    {
+        "id": "6935f6f0e5bfded0",
+        "type": "debug",
+        "z": "c7f7a03a584cb59c",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "dd0785676f178edc",
+        "type": "debug",
+        "z": "c7f7a03a584cb59c",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "656c463580d9e6de",
+        "type": "ui_led",
+        "z": "c7f7a03a584cb59c",
+        "order": 2,
+        "group": "1a851134612c314d",
+        "width": 0,
+        "height": 0,
+        "label": "Grijac",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "true",
+                "valueType": "bool"
+            },
+            {
+                "color": "#9a9996",
+                "value": "false",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "square",
+        "showGlow": true,
+        "name": "",
+        "x": 1090,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "f5860f9e8e382cd1",
+        "type": "function",
+        "z": "c7f7a03a584cb59c",
+        "name": "bool",
+        "func": "msg.payload = msg.payload ? true : false;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 580,
+        "wires": [
+            [
+                "656c463580d9e6de",
+                "e9d74f4bf205fd02"
+            ]
+        ]
+    },
+    {
+        "id": "e9d74f4bf205fd02",
+        "type": "debug",
+        "z": "c7f7a03a584cb59c",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1100,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "74d14c0c97ac3323",
+        "type": "inject",
+        "z": "c7f7a03a584cb59c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "x": 310,
+        "y": 560,
+        "wires": [
+            [
+                "4487709928515c85"
+            ]
+        ]
+    },
+    {
+        "id": "4487709928515c85",
+        "type": "link out",
+        "z": "c7f7a03a584cb59c",
+        "name": "Reset Graphs",
+        "mode": "link",
+        "links": [
+            "8f067cc7b1073880",
+            "76cedf30afafe9f4",
+            "16476f327c84cc7f",
+            "171c4b0627175d1d"
+        ],
+        "x": 475,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "76cedf30afafe9f4",
+        "type": "link in",
+        "z": "c7f7a03a584cb59c",
+        "name": "link in 2",
+        "links": [
+            "4487709928515c85"
+        ],
+        "x": 965,
+        "y": 760,
+        "wires": [
+            [
+                "36455a44cb5a2c89",
+                "b3b4836e1d76f1d9"
+            ]
+        ]
+    },
+    {
+        "id": "16476f327c84cc7f",
+        "type": "link in",
+        "z": "c7f7a03a584cb59c",
+        "name": "link in 3",
+        "links": [
+            "4487709928515c85"
+        ],
+        "x": 805,
+        "y": 380,
+        "wires": [
+            [
+                "2a5f41e8fc61bd38"
+            ]
+        ]
+    },
+    {
+        "id": "171c4b0627175d1d",
+        "type": "link in",
+        "z": "c7f7a03a584cb59c",
+        "name": "link in 4",
+        "links": [
+            "4487709928515c85"
+        ],
+        "x": 815,
+        "y": 220,
+        "wires": [
+            [
+                "a76ca902eac64da4"
+            ]
+        ]
+    },
+    {
+        "id": "f5664a3df62cf331",
+        "type": "ui_button",
+        "z": "c7f7a03a584cb59c",
+        "name": "",
+        "group": "cfc66f4e92b1fc34",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Reset Historije",
+        "tooltip": "Klikni da obrises sve podatke sa graphova",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 320,
+        "y": 500,
+        "wires": [
+            [
+                "4487709928515c85"
+            ]
+        ]
+    },
+    {
+        "id": "f8d5b52b003fc9a7",
+        "type": "debug",
+        "z": "c7f7a03a584cb59c",
+        "name": "debug 7",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1220,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "906ab67e55964c86",
+        "type": "function",
+        "z": "c7f7a03a584cb59c",
+        "name": "historija_grijaca",
+        "func": "// Retrieve stored history or initialize\nvar history = flow.get(\"history\") || Array(1800).fill(0);\n\n// Shift values left and add a new event count\nhistory.push(msg.payload === 1 ? 1 : 0); // Add 1 if input is HIGH\nif (history.length > 1800) history.shift(); // Keep only the last 4 records\n\n// Save history\nflow.set(\"history\", history);\n\n// Format for chart node\nmsg.payload = [\n    {\n        series: [\"Events\"],\n        data: [history],\n        labels: Array.from({ length: history.length }, (_, i) => `${i - history.length*2}s`)\n    }\n];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 640,
+        "wires": [
+            [
+                "4f7f0e33696992cd",
+                "36455a44cb5a2c89"
+            ]
+        ]
+    },
+    {
+        "id": "4f7f0e33696992cd",
+        "type": "debug",
+        "z": "c7f7a03a584cb59c",
+        "name": "debug 8",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1180,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "36455a44cb5a2c89",
+        "type": "ui_chart",
+        "z": "c7f7a03a584cb59c",
+        "name": "",
+        "group": "cfc66f4e92b1fc34",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Grijac",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "-0.1",
+        "ymax": "1.1",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": true,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1170,
+        "y": 740,
+        "wires": [
+            []
+        ],
+        "info": "{\n    \"scales\": {\n        \"x\": {\n            \"barPercentage\": 1.0,\n            \"categoryPercentage\": 1.0\n        }\n    }\n}\n"
+    },
+    {
+        "id": "b3b4836e1d76f1d9",
+        "type": "function",
+        "z": "c7f7a03a584cb59c",
+        "name": "resetuj vrijednosti",
+        "func": "var history = Array(1800).fill(0);\nhistory.length = 0;\n\nflow.set(\"history\", history);",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1210,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    }
+]
