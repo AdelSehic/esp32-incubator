@@ -31,7 +31,7 @@ void publish_data(float temperature, float humidity, bool heater) {
 
 void setup() {
   // Start the Serial Monitor
-  // Serial.begin(115200);
+  Serial.begin(115200);
   init_temperature();
   init_relays();
   init_wifi();

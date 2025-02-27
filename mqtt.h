@@ -5,8 +5,7 @@
 #include <PubSubClient.h>
 
 // MQTT Configuration
-// #define MQTT_BROKER     "192.168.100.2"     // Replace with your broker address
-#define MQTT_BROKER     "10.1.1.108"        // Replace with your broker address
+#define MQTT_BROKER     "192.168.100.2"     // Replace with your broker address
 #define MQTT_PORT       1883                // Default MQTT port
 #define MQTT_CLIENT_ID  "ESP32_Inkubator"
 
