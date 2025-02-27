@@ -10,8 +10,8 @@
 DHT11 dht(26);
 
 // Temperatures limit
-float temp_high = 37.8;
-float temp_low = 37.3;
+float temp_high = 37.6;
+float temp_low = 37.35;
 
 float cached_humidity = 0.0;
 

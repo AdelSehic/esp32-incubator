@@ -10,14 +10,19 @@
 #define MQTT_CLIENT_ID  "ESP32_Inkubator"
 
 // MQTT Topics
-#define MQTT_TOPIC_PUBLISH_TEMP   "inkubator/temperatura"
-#define MQTT_TOPIC_PUBLISH_HUMID  "inkubator/vlaznost"
-#define MQTT_TOPIC_PUBLISH_HEATER "inkubator/grijac"
-#define MQTT_TOPIC_PUBLISH_STATE  "inkubator/stanje"
+#define MQTT_TOPIC_PUBLISH_TEMP       "inkubator/temperatura"
+#define MQTT_TOPIC_PUBLISH_HUMID      "inkubator/vlaznost"
+#define MQTT_TOPIC_PUBLISH_HEATER     "inkubator/grijac"
+#define MQTT_TOPIC_PUBLISH_STATE      "inkubator/stanje"
+#define MQTT_TOPIC_SUBSCRIBE_CONFIG   "inkubator/postavke/histereza"
+
+extern float temp_high;
+extern float temp_low;
 
 void init_mqtt();
 void mqtt_loop();
 void mqtt_publish(const char* topic, const char* message);
 bool is_mqtt_connected();
+void mqtt_callback(char* topic, byte* payload, unsigned int length);
 
 #endif

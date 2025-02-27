@@ -166,6 +166,17 @@
         "className": ""
     },
     {
+        "id": "d636ef0da72c6b7c",
+        "type": "ui_group",
+        "name": "Postavi Temperaturu",
+        "tab": "6f5aeda6e0f2951e",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": true,
+        "className": ""
+    },
+    {
         "id": "a76ca902eac64da4",
         "type": "ui_chart",
         "z": "c7f7a03a584cb59c",
@@ -581,7 +592,6 @@
         "name": "Reset Graphs",
         "mode": "link",
         "links": [
-            "8f067cc7b1073880",
             "76cedf30afafe9f4",
             "16476f327c84cc7f",
             "171c4b0627175d1d"
@@ -598,8 +608,8 @@
         "links": [
             "4487709928515c85"
         ],
-        "x": 965,
-        "y": 760,
+        "x": 1045,
+        "y": 720,
         "wires": [
             [
                 "36455a44cb5a2c89",
@@ -717,7 +727,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1180,
-        "y": 680,
+        "y": 640,
         "wires": []
     },
     {
@@ -759,7 +769,7 @@
         "useDifferentColor": false,
         "className": "",
         "x": 1170,
-        "y": 740,
+        "y": 700,
         "wires": [
             []
         ],
@@ -778,9 +788,269 @@
         "finalize": "",
         "libs": [],
         "x": 1210,
-        "y": 800,
+        "y": 760,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "8756c213003c0d86",
+        "type": "ui_numeric",
+        "z": "c7f7a03a584cb59c",
+        "name": "",
+        "label": "Donja",
+        "tooltip": "",
+        "group": "d636ef0da72c6b7c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "temp_low",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": "37",
+        "max": "37.5",
+        "step": "0.05",
+        "className": "",
+        "x": 370,
+        "y": 880,
+        "wires": [
+            [
+                "c938daa281226a12"
+            ]
+        ]
+    },
+    {
+        "id": "0757f5df2a77189a",
+        "type": "ui_numeric",
+        "z": "c7f7a03a584cb59c",
+        "name": "",
+        "label": "Gornja",
+        "tooltip": "",
+        "group": "d636ef0da72c6b7c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "temp_high",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": "37",
+        "max": "38",
+        "step": "0.05",
+        "className": "",
+        "x": 370,
+        "y": 820,
+        "wires": [
+            [
+                "e2451224b61108e0"
+            ]
+        ]
+    },
+    {
+        "id": "45b6a66ec717e149",
+        "type": "mqtt out",
+        "z": "c7f7a03a584cb59c",
+        "name": "Postavi Histerezu",
+        "topic": "inkubator/postavke/histereza",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6098d39cea387008",
+        "x": 590,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "aad2348b25841826",
+        "type": "inject",
+        "z": "c7f7a03a584cb59c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 520,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ba924cf1d21145dc",
+        "type": "inject",
+        "z": "c7f7a03a584cb59c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "37.6",
+        "payloadType": "num",
+        "x": 230,
+        "y": 820,
+        "wires": [
+            [
+                "0757f5df2a77189a"
+            ]
+        ]
+    },
+    {
+        "id": "03212f8afb281160",
+        "type": "inject",
+        "z": "c7f7a03a584cb59c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "37.35",
+        "payloadType": "num",
+        "x": 230,
+        "y": 880,
+        "wires": [
+            [
+                "8756c213003c0d86"
+            ]
+        ]
+    },
+    {
+        "id": "ae5c848893924d9f",
+        "type": "debug",
+        "z": "c7f7a03a584cb59c",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "5ee68bb51daf9e5c",
+        "type": "ui_button",
+        "z": "c7f7a03a584cb59c",
+        "name": "",
+        "group": "d636ef0da72c6b7c",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Postavi",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "dugme",
+        "topicType": "str",
+        "x": 220,
+        "y": 980,
+        "wires": [
+            [
+                "9c4c3cf7b6278afa"
+            ]
+        ]
+    },
+    {
+        "id": "e2451224b61108e0",
+        "type": "function",
+        "z": "c7f7a03a584cb59c",
+        "name": "set hi",
+        "func": "flow.set(\"temp_high\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c938daa281226a12",
+        "type": "function",
+        "z": "c7f7a03a584cb59c",
+        "name": "set low",
+        "func": "flow.set(\"temp_low\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9c4c3cf7b6278afa",
+        "type": "function",
+        "z": "c7f7a03a584cb59c",
+        "name": "get histeresis",
+        "func": "msg.payload = {\n    temp_high: flow.get(\"temp_high\"),\n    temp_low: flow.get(\"temp_low\"),\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 980,
+        "wires": [
+            [
+                "ae5c848893924d9f",
+                "45b6a66ec717e149"
+            ]
         ]
     }
 ]
