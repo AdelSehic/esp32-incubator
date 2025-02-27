@@ -1,3 +1,5 @@
+![cute chick](https://github.com/AdelSehic/esp32-incubator/blob/master/chicken.png)
+
 # ESP32 Chicken Egg Incubator Controller
 
 ## Overview
